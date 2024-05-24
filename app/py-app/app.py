@@ -29,9 +29,9 @@ from werkzeug.serving import run_simple
 
 from emissor.representation.ldschema import emissor_dataclass
 
-from <NAME>.template.api import DemoProcessor
-from <NAME>.template.dummy_demo import DummyDemoProcessor
-from <NAME>_service.template.service import DemoService
+from app.template.api import DemoProcessor
+from app.template.dummy_demo import DummyDemoProcessor
+from app_service.template.service import DemoService
 
 logging.config.fileConfig(os.environ.get('CLTL_LOGGING_CONFIG', default='config/logging.config'),
                           disable_existing_loggers=False)

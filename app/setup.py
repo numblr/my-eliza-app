@@ -9,12 +9,12 @@ with open("VERSION", "r") as fh:
 
 
 setup(
-    name='<NAME>.<NAME>-app',
+    name='app.app-app',
     version=version,
     package_dir={'': 'src'},
-    packages=find_namespace_packages(include=['cltl.*', 'cltl_service.*', '<NAME>.*', '<NAME>_service.*'], where='src'),
+    packages=find_namespace_packages(include=['cltl.*', 'cltl_service.*', 'app.*', 'app_service.*'], where='src'),
     data_files=[('VERSION', ['VERSION'])],
-    url="https://github.com/numblr/<NAME>-app",
+    url="https://github.com/numblr/app-app",
     license='MIT License',
     author='',
     author_email='',
