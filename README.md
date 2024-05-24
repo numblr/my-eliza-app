@@ -20,12 +20,14 @@ for each run of the application.
 
 1. Clone this repository.
 
-   git clone https://github.com/leolani/cltl-template-app.git <YOUR FOLDER NAME>
+
+    git clone https://github.com/leolani/cltl-template-app.git <YOUR FOLDER NAME>
 
 1. Change the *origin* to your own online *git* repository:
 
-   git remote set-url origin <YOUR REPOSITORY URL>
-   git push -u origin main
+
+    git remote set-url origin <YOUR REPOSITORY URL>
+    git push -u origin main
 
 1. Add custom components and code in *src/* or add them as *git* submodule as described below.
 
@@ -33,8 +35,9 @@ for each run of the application.
 
 1. Add the component as *git* submodule, e.g *cltl-eliza*:
 
-   git submodule add -b main --name cltl-eliza https://github.com/leolani/cltl-eliza.git cltl-eliza
-   git submodule update --init --recursive
+
+    git submodule add -b main --name cltl-eliza https://github.com/leolani/cltl-eliza.git cltl-eliza
+    git submodule update --init --recursive
 
 1. Add the component to
     - *makefile*: Add the folder name of the component to the *project_dependencies* list, e.g. `cltl-eliza`.
