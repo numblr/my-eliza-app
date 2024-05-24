@@ -6,7 +6,7 @@ project_dependencies ?= $(addprefix $(project_root)/, \
 		cltl-requirements \
 		cltl-emissor-data \
 		cltl-chat-ui \
-		app-app)
+		app)
 
 git_remote ?= https://github.com/leolani
 

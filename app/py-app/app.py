@@ -29,9 +29,9 @@ from werkzeug.serving import run_simple
 
 from emissor.representation.ldschema import emissor_dataclass
 
-from app.template.api import DemoProcessor
-from app.template.dummy_demo import DummyDemoProcessor
-from app_service.template.service import DemoService
+from myapp.template.api import DemoProcessor
+from myapp.template.dummy_demo import HelloWorldProcessor
+from myapp_service.template.service import DemoService
 
 logging.config.fileConfig(os.environ.get('CLTL_LOGGING_CONFIG', default='config/logging.config'),
                           disable_existing_loggers=False)
@@ -100,7 +100,7 @@ class DemoContainer(InfraContainer):
     @property
     @singleton
     def processor(self) -> DemoProcessor:
-        return DummyDemoProcessor("")
+        return HelloWorldProcessor()
 
     @property
     @singleton

@@ -1,4 +1,5 @@
-.[impl, service]
+# Install the modules as defined in setup.py to make them available on the PYTHONPATH
+.
 
 emissor
 cltl.emissor-data[service,client]

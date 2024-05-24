@@ -12,7 +12,7 @@ from emissor.representation.scenario import TextSignal
 from flask import Flask, Response
 from flask.json import JSONEncoder
 
-from cltl.template.api import DemoProcessor
+from myapp.template.api import DemoProcessor
 
 logger = logging.getLogger(__name__)
 
@@ -74,7 +74,7 @@ class DemoService:
         self._app = Flask("Template app")
 
         @self._app.route(f"/query/<paramter>", methods=['GET'])
-        def store_audio(parameter: str):
+        def query_endpoint(parameter: str):
             return self._processor.respond(parameter)
 
         @self._app.after_request

@@ -8,7 +8,7 @@ project_components = $(addprefix ${project_root}/, \
         cltl-combot \
         cltl-emissor-data \
         cltl-chat-ui \
-        app-app)
+        app)
 
 git_local ?= ..
 git_remote ?= "https://github.com/leolani"
