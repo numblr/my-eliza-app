@@ -1,0 +1,24 @@
+[submodule "cltl-requirements/util"]
+	path = cltl-requirements/util
+	url = https://github.com/leolani/cltl-build.git
+	branch = main
+[submodule "emissor"]
+	path = emissor
+	url = https://github.com/leolani/emissor.git
+	branch = main
+[submodule "util"]
+	path = util
+	url = https://github.com/leolani/cltl-build.git
+	branch = main
+[submodule "cltl-combot"]
+	path = cltl-combot
+	url = https://github.com/leolani/cltl-combot.git
+	branch = main
+[submodule "cltl-emissor-data"]
+	path = cltl-emissor-data
+	url = https://github.com/leolani/cltl-emissor-data.git
+	branch = main
+[submodule "cltl-chat-ui"]
+	path = cltl-chat-ui
+	url = https://github.com/leolani/cltl-chat-ui.git
+	branch = main
