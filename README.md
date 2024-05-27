@@ -21,7 +21,7 @@ for each run of the application.
 1. Clone this repository.
 
 
-    git clone https://github.com/leolani/cltl-template-app.git <YOUR FOLDER NAME>
+    git clone --recurse-submodules https://github.com/leolani/cltl-template-app.git <YOUR FOLDER NAME>
 
 1. Change the *origin* to your own online *git* repository:
 
