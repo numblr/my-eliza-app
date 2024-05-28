@@ -37,7 +37,7 @@ for each run of the application.
        git submodule update --init --recursive
 
 1. Add the component to
-    - *makefile*: Add the folder name of the component to the *project_dependencies* list, e.g. `cltl-eliza`.
+    - *makefile*: Add the folder name of the component to the *project_components* list, e.g. `cltl-eliza`.
     - *app/makefile*: Add the folder name of the component to the *project_dependencies* list, e.g. `cltl-eliza`.
     - *app/requirements.txt*: Add it with the package name and eventual
       [optional depencdenies](https://setuptools.pypa.io/en/latest/userguide/dependency_management.html#optional-dependencies)
