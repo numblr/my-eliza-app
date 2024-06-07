@@ -200,6 +200,7 @@ def main():
         routes = {
             '/emissor': started_app.emissor_data_service.app,
             '/chatui': started_app.chatui_service.app,
+            # ADD ADDITIONAL ENDPOINTS HERE
         }
 
         web_app = DispatcherMiddleware(Flask("Demo app"), routes)
