@@ -14,10 +14,13 @@ from cltl.combot.infra.event.memory import SynchronousEventBusContainer
 from cltl.combot.infra.event_log import LogWriter
 from cltl.combot.infra.resource.threaded import ThreadedResourceContainer
 from cltl.combot.infra.time_util import timestamp_now
+from cltl.eliza.api import Eliza
+from cltl.eliza.eliza import ElizaImpl
 from cltl.emissordata.api import EmissorDataStorage
 from cltl.emissordata.file_storage import EmissorDataFileStorage
 from cltl_service.chatui.service import ChatUiService
 from cltl_service.combot.event_log.service import EventLogService
+from cltl_service.eliza.service import ElizaService
 from emissor.representation.scenario import Modality, Scenario, ScenarioContext
 
 from cltl_service.emissordata.client import EmissorDataClient
@@ -118,12 +121,35 @@ class DemoContainer(InfraContainer):
         super().stop()
 
 
+class ElizaContainer(EmissorStorageContainer, InfraContainer):
+    @property
+    @singleton
+    def eliza(self) -> Eliza:
+        return ElizaImpl()
+
+    @property
+    @singleton
+    def eliza_service(self) -> ElizaService:
+        return ElizaService.from_config(self.eliza, self.emissor_data_client,
+                                        self.event_bus, self.resource_manager, self.config_manager)
+
+    def start(self):
+        logger.info("Start Eliza Service")
+        super().start()
+        self.eliza_service.start()
+
+    def stop(self):
+        logger.info("Stop Eliza Service")
+        self.eliza_service.stop()
+        super().stop()
+
+
 @emissor_dataclass
 class ApplicationContext(ScenarioContext):
     speaker: Agent
 
 
-class ApplicationContainer(DemoContainer, ChatUIContainer, EmissorStorageContainer):
+class ApplicationContainer(ElizaContainer, ChatUIContainer, EmissorStorageContainer):
     @property
     @singleton
     def log_writer(self):

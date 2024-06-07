@@ -4,3 +4,4 @@
 emissor
 cltl.emissor-data[service,client]
 cltl.chat-ui[service]
+cltl.eliza[service]

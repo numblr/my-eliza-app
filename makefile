@@ -8,6 +8,7 @@ project_components = $(addprefix ${project_root}/, \
         cltl-combot \
         cltl-emissor-data \
         cltl-chat-ui \
+        cltl-eliza \
         app)
 
 git_local ?= ..
